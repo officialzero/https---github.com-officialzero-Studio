@@ -19,8 +19,7 @@ jobs:
       - name: Checkout Code (Full History)
         uses: actions/checkout@v4
         with:
-          # 🚨 핵심 수정: 전체 기록을 가져와 경로 인식 오류를 방지합니다.
-          fetch-depth: 0
+          fetch-depth: 0 # 이전 단계에서 추가한 중요한 옵션은 유지합니다.
         
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -30,9 +29,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
         
+      # ==========================================================
+      # 🚨 문제 해결: working-directory를 '.'으로 설정하여 
+      # 이 명령이 항상 프로젝트의 루트 폴더에서 실행되도록 강제합니다.
+      # ==========================================================
       - name: Build Project
-        # package.json의 'vite build'가 실행됩니다.
         run: npm run build
+        working-directory: . # <-- 이 줄이 핵심입니다.
         
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
