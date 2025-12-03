@@ -64,6 +64,12 @@ VITE_RECIPIENT_EMAIL=your-email@gmail.com
 
 ```
 inserview-studio/
+├──📁 .github/             
+│           └── 📁 workflows/             
+│             └── 📄 deploy.yml
+├── 📁 src/
+├── 📁 dist/   
+│       └── 📄 Index.html
 ├── 📁 node_modules
 │            └── 📄 여기도 무수히 많은 파일이 있지만 작성 힘들어서 생략 
 ├── 📁 src/
@@ -136,9 +142,10 @@ inserview-studio/
 │   └── globals.css  
 ├── .env
 ├── .gitignore
+├── .nojekyll
 ├── Attributions.md
 ├── components.json
-├── index.html
+├── Index.html
 ├── package-lok.json
 ├── package.json
 ├── README.md
